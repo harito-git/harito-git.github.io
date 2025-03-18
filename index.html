@@ -15,17 +15,19 @@
         body {
             line-height: 1.6;
             color: #333;
-            background: #f4f4f4;
+            background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
             padding: 20px;
+            scroll-behavior: smooth;
         }
         header {
             background: #000;
             color: #fff;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
+            animation: fadeIn 1.5s;
         }
         header h1 {
-            font-size: 50px;
+            font-size: 55px;
             font-weight: 700;
         }
         nav ul {
@@ -34,39 +36,44 @@
             justify-content: center;
         }
         nav ul li {
-            margin: 0 20px;
+            margin: 0 25px;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 20px;
             transition: 0.3s;
         }
         nav a:hover {
             color: #007BFF;
         }
         section {
-            padding: 60px 20px;
+            padding: 80px 20px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s, transform 0.8s;
         }
-        .projects, .about, .contact {
-            max-width: 1100px;
-            margin: 0 auto;
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .projects img {
             width: 100%;
             max-width: 500px;
             border-radius: 10px;
             transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         .projects img:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         footer {
             background: #000;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 0;
         }
         footer a {
             color: #007BFF;
@@ -74,6 +81,10 @@
         }
         footer a:hover {
             color: #0056b3;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
     </style>
 </head>
@@ -99,9 +110,9 @@
     <h2>Projects</h2>
     <p>Here are some of my recent projects:</p>
     <div>
-        <img src="https://via.placeholder.com/500" alt="Project Image">
-        <h3>Stock Tracker AI</h3>
-        <p>An AI-powered stock analysis tool that provides personalized investment recommendations using Alpha Vantage API and Flask.</p>
+        <img src="https://devpost.com/software/semesterly" alt="Project Image">
+        <h3>Semesterly</h3>
+        <p>An all in-one project, I made in a ahckathon, to help students with their scheduling, well-being, and has a custom ai workout feature. The image is off the project on devpost.</p>
     </div>
 </section>
 
@@ -116,6 +127,18 @@
     <p>&copy; 2025 Harit Oza | <a href="#about">Back to Top</a></p>
 </footer>
 
+<script>
+    window.addEventListener('scroll', () => {
+        document.querySelectorAll('section').forEach(section => {
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.8) {
+                section.classList.add('visible');
+            }
+        });
+    });
+</script>
+
 </body>
 </html>
+
 
