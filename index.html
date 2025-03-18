@@ -48,7 +48,7 @@
             color: #007BFF;
         }
         section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
             opacity: 0;
             transform: translateY(30px);
@@ -60,7 +60,7 @@
         }
         .projects img {
             width: 100%;
-            max-width: 500px;
+            max-width: 800px;
             border-radius: 10px;
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -86,6 +86,22 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            color: #fff;
+            background: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -101,24 +117,25 @@
     </nav>
 </header>
 
-<section id="about" class="about">
+<section id="about" class="about container">
     <h2>About Me</h2>
     <p>I'm a passionate learner who thrives on exploring new technologies. I love AI, biking, reading, and diving into economics. Constantly seeking to grow, I enjoy tackling challenges and expanding my skills.</p>
+    <a href="#projects" class="btn">View My Projects</a>
 </section>
 
-<section id="projects" class="projects">
+<section id="projects" class="projects container">
     <h2>Projects</h2>
     <p>Here are some of my recent projects:</p>
     <div>
         <a href="https://devpost.com/software/semesterly" target="_blank">
-            <img src="https://devpost.com/software/semesterly" alt="Semesterly Project">
+            <img src="https://raw.githubusercontent.com/USERNAME/REPO_NAME/main/IMAGE_NAME.png" alt="Semesterly Project">
         </a>
         <h3>Semesterly</h3>
         <p>A project management tool for students to efficiently organize and track their semester schedule.</p>
     </div>
 </section>
 
-<section id="contact" class="contact">
+<section id="contact" class="contact container">
     <h2>Reach Out</h2>
     <p>Feel free to connect with me!</p>
     <p>Email: <a href="mailto:harit.oza16@gmail.com">harit.oza16@gmail.com</a></p>
@@ -142,6 +159,7 @@
 
 </body>
 </html>
+
 
 
 
